@@ -27,9 +27,16 @@
   },
   "keywords": [
     "table builder",
-    "table"
+    "table",
+    "builder",
+    "ascii",
+    "cli"
   ],
-  "author": "vmishakin",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vmishakin/tabletip.git"
+  },
+  "author": "Vadim Mishakin <vadmishakin@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "commander": "^12.0.0"
