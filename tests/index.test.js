@@ -64,7 +64,7 @@ describe('tabletip', () => {
     const res = tabletip(4, 4, {
       includeHeaders: true,
       startFrom: 1,
-      expression: '(row+1)*(col+1)',
+      expression: '(row)*(col)',
     });
     // prettier-ignore
     expect(res).toBe(
@@ -76,8 +76,10 @@ describe('tabletip', () => {
 `);
   });
 
-  it('should evaluate javascript expression', () => {
-    const res = tabletip(4, 4, { expression: '(row+1)*(row+1)*(col+1)*(col+1)' });
+  it('should evaluate another javascript expression', () => {
+    const res = tabletip(4, 4, {
+      expression: '(row+1)*(row+1)*(col+1)*(col+1)',
+    });
     // prettier-ignore
     expect(res).toBe(
 `|   1 |   4 |   9 |  16 |
@@ -91,7 +93,7 @@ describe('tabletip', () => {
     const res = tabletip(4, 4, {
       includeHeaders: true,
       startFrom: 1,
-      expression: '(row+1)*(row+1)*(col+1)*(col+1)',
+      expression: '(row)*(row)*(col)*(col)',
       removeTabulation: true,
     });
     // prettier-ignore
@@ -101,6 +103,15 @@ describe('tabletip', () => {
 2 | 4 | 16 | 36 | 64 |
 3 | 9 | 36 | 81 | 144 |
 4 | 16 | 64 | 144 | 256 |
+`);
+  });
+
+  it('should change delimeter', () => {
+    const res = tabletip(2, 2, { delimeter: '$' });
+    // prettier-ignore
+    expect(res).toBe(
+`$ 0 $ 0 $
+$ 0 $ 0 $
 `);
   });
 });

@@ -6,6 +6,7 @@ export interface TToolParams {
   startRows?: number;
   startCols?: number;
   removeTabulation?: boolean;
+  delimeter?: string;
 }
 
 export default function tabletip(width: number, height: number, params?: TToolParams): string;

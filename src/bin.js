@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import { program } from 'commander';
-import tabletip from './index.js'
-import print from './print.js'
+import tabletip from './index.js';
+import print from './print.js';
 
 program
   .version('1.0.0', '-v, --version')
@@ -18,20 +18,13 @@ program
     myParseInt,
     0,
   )
-  .option(
-    '--startRows <number>',
-    'start table rows from',
-    myParseInt,
-  )
-  .option(
-    '--startCols <number>',
-    'start table cols from',
-    myParseInt,
-  )
+  .option('--startRows <number>', 'start table rows from', myParseInt)
+  .option('--startCols <number>', 'start table cols from', myParseInt)
   .option(
     '-e, --expression <string>',
     'use javascript expression to fill a table',
   )
+  .option('-d, --delimeter <char>', 'change delimeter', '|')
   .parse(process.argv);
 
 const options = program.opts();
@@ -44,6 +37,7 @@ const resData = tabletip(program.processedArgs[0], program.processedArgs[1], {
   startRows: options.startRows,
   startCols: options.startCols,
   removeTabulation: options.tabulation,
+  delimeter: options.delimeter,
 });
 
 print(resData, options.copy);

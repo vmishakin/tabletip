@@ -1,5 +1,3 @@
-// TODO: make customizable
-const delimeter = '|';
 const header = '#';
 
 /**
@@ -10,6 +8,7 @@ const header = '#';
  * @returns
  */
 export default function tabletip(rows, cols, _params) {
+  const delimeter = _params?.delimeter ?? '|';
   const params = {
     includeHeaders: _params?.includeHeaders ?? false,
     fillSymbol: _params?.fillSymbol ?? '0',
