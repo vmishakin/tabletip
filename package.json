@@ -1,6 +1,6 @@
 {
   "name": "tabletip",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "customizable ascii table builder",
   "type": "module",
   "bin": "./src/bin.js",

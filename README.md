@@ -57,6 +57,7 @@ Options:
   --startRows <number>       start table rows from
   --startCols <number>       start table cols from
   -e, --expression <string>  use javascript expression to fill a table
+  -d, --delimeter <char>     change delimeter (default: "|")
   -h, --help                 display help for command
 ```
 
