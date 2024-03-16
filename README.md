@@ -1,6 +1,6 @@
 # Tabletip - a tool for creating ascii tables
 
-You need this when you need to quickly create a table like this:
+You will need this if you need to quickly create a table similar to this one:
 
 ```text
 #   0   1   2   3   4   5
